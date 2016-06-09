@@ -3,6 +3,8 @@ package utils
 import (
 	"fmt"
 	"os"
+
+	"github.com/spf13/cobra"
 )
 
 // NAME contains the name of the program.
@@ -14,6 +16,14 @@ var Version = "unknown"
 func ExitOnErr(err error) {
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "%s", err)
+		os.Exit(1)
+	}
+}
+
+func ExpectExactArgs(cmd *cobra.Command, argCnt int) {
+	if len(cmd.ValidArgs) != argCnt {
+		PrintErr("error: expected %d arguments, got %d\n", argCnt, len(cmd.ValidArgs))
+		cmd.Usage()
 		os.Exit(1)
 	}
 }
