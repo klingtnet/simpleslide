@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"bufio"
 	"bytes"
 	"io/ioutil"
 	"os"
@@ -65,7 +64,6 @@ func renderTemplate(slides []string) ([]byte, error) {
 		return nil, err
 	}
 	var renderBuf bytes.Buffer
-	byteWriter := bufio.NewWriter(&renderBuf)
-	err = tmpl.Execute(byteWriter, content)
+	err = tmpl.Execute(&renderBuf, content)
 	return renderBuf.Bytes(), err
 }
