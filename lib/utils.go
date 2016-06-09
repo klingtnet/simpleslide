@@ -2,6 +2,7 @@ package utils
 
 import (
 	"fmt"
+	"io/ioutil"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -42,4 +43,12 @@ func PrintIfVerbose(verbose bool, format string, args ...interface{}) {
 	if verbose {
 		fmt.Printf(format, args...)
 	}
+}
+
+func ReadFileAsString(filepath string) (string, error) {
+	raw, err := ioutil.ReadFile(filepath)
+	if raw != nil {
+		return string(raw), err
+	}
+	return "", err
 }
