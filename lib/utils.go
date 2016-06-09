@@ -20,9 +20,9 @@ func ExitOnErr(err error) {
 	}
 }
 
-func ExpectExactArgs(cmd *cobra.Command, argCnt int) {
-	if len(cmd.ValidArgs) != argCnt {
-		PrintErr("error: expected %d arguments, got %d\n", argCnt, len(cmd.ValidArgs))
+func ExpectExactArgs(cmd *cobra.Command, argCnt int, args []string) {
+	if len(args) != argCnt {
+		PrintErr("error: expected %d arguments, got %d\n", argCnt, len(args))
 		cmd.Usage()
 		os.Exit(1)
 	}
