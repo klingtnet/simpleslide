@@ -17,3 +17,13 @@ func ExitOnErr(err error) {
 		os.Exit(1)
 	}
 }
+
+func PrintIfErr(err error) {
+	if err != nil {
+		PrintErr("error: %\n", err)
+	}
+}
+
+func PrintErr(format string, args ...interface{}) {
+	fmt.Fprintf(os.Stderr, format, args...)
+}
