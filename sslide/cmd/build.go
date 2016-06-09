@@ -30,6 +30,7 @@ var buildCmd = &cobra.Command{
 		utils.PrintIfVerbose(verbose, "Found %d slides\n", len(slides))
 		raw, err := renderTemplate(slides)
 		utils.ExitIfErr(err)
+		utils.PrintIfVerbose(verbose, "Writing output to: %s\n", args[1])
 		utils.ExitIfErr(ioutil.WriteFile(args[1], raw, os.FileMode(0644)))
 	},
 }
