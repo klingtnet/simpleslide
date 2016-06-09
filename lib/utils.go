@@ -31,7 +31,7 @@ func ExpectExactArgs(cmd *cobra.Command, argCnt int, args []string) {
 
 func PrintIfErr(err error) {
 	if err != nil {
-		PrintErr("error: %\n", err)
+		PrintErr("error: %s\n", err)
 	}
 }
 
