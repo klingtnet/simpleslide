@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: blue;
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+h1,h2,h3,h4,h5,h6 {
+  text-align: center;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.slides {
+  font-size: 3em;
+}
+.slide {
+  position: absolute;
+  background-color: #444;
+  width: 100vw;
+  height: 100vh;
+}
+.slide-content {
+  padding: 1em;
+}
+</style>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/default.min.css">
+</head>
+<body>
+  <div class="slides">
+    <div class="slide">
+      <div class="slide-content">
+        <h2>one</h2>
+        <p>This is a slide.</p>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-content">
+        <h2>two</h2>
+        <p>Another beautiful slide.</p>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-content">
+        <h2>three</h2>
+        <p>This time with some <code>code</code>.</p>
+        <pre><code class="C">
+#include <stdio.h>
+
+int main(void) {
+  println("hello world!");
+}
+        </code></pre>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-content">
+        <h2>four</h2>
+        <img src="https://media.giphy.com/media/3o85xm0pDVY4EkKdFe/giphy.gif">
+      </div>
+    </div>
+  </div>
+<script>
+"use strict";
+
+var currentSlide = 0;
+document.addEventListener("click", function() {console.log("Hi");}, false);
+
+function scrollTo(slideNr) {
+  var slides = document.getElementsByClassName("slide");
+  var len = slides.length;
+  if (slideNr < 0 || slideNr > len -1) {
+    return;
+  }
+  for (var idx=0; idx < len; idx++) {
+    var slide = slides[idx];
+    if (idx === slideNr) {
+      slide.style.visibility = "visible";
+//      slide.style["z-index"] = 0;
+    } else {
+      slide.style.visibility = "hidden";
+//    slide.style["z-index"] = -1;
+    }
+  }
+  currentSlide = slideNr;
+}
+
+function scroll(skip) {
+  scrollTo(currentSlide + skip);
+}
+
+window.onkeydown = function(event) {
+  switch (event.key) {
+    case "ArrowLeft":
+      scroll(-1);
+      break;
+    case "ArrowRight":
+      scroll(1);
+      break;
+    default:
+      console.log(event.key)
+  }
+}
+
+scrollTo(0);
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
