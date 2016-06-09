@@ -13,7 +13,7 @@ const NAME = "simpleslide"
 // Version contains the programs semver string.
 var Version = "unknown"
 
-func ExitOnErr(err error) {
+func ExitIfErr(err error) {
 	PrintIfErr(err)
 	if err != nil {
 		os.Exit(1)

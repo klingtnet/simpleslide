@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	utils.ExitOnErr(cmd.RootCmd.Execute())
+	utils.ExitIfErr(cmd.RootCmd.Execute())
 }
