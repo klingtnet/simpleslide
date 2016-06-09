@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>{{.Style}}</style>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/default.min.css">
+</head>
+<body>
+  <div class="slides">
+{{- range $idx, $slide := .Slides -}}
+    <div class="slide">
+    <div class="slide-content">
+<!-- begin slide #{{$idx}} -->
+      {{- $slide -}}
+<!-- end slide #{{$idx}} -->
+    </div>
+    </div>
+{{- end -}}
+  </div>
+<script>{{.Script}}</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</body>
+</html>

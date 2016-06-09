@@ -1,0 +1,38 @@
+body {
+  background-color: #222;
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+h1,h2,h3,h4,h5,h6 {
+  text-align: center;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.slides {
+  font-size: 3em;
+}
+.slide {
+  position: absolute;
+  background-color: #444;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+}
+.slide-content {
+  max-height: 100%;
+  max-width: 100%;
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+img {
+  margin: auto;
+  object-fit: scale-down;
+  min-height: 100%;
+  max-width: 100%;
+}
