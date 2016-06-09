@@ -5,7 +5,7 @@ import (
 )
 
 var buildCmd = &cobra.Command{
-	Use:   "builds",
+	Use:   "build",
 	Short: "Builds the slideshow",
 	Run: func(cmd *cobra.Command, args []string) {
 	},
