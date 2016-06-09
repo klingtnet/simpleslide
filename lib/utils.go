@@ -14,8 +14,8 @@ const NAME = "simpleslide"
 var Version = "unknown"
 
 func ExitOnErr(err error) {
+	PrintIfErr(err)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "%s", err)
 		os.Exit(1)
 	}
 }
