@@ -7,14 +7,14 @@
 <body>
   <div class="slides">
 {{- range $idx, $slide := .Slides -}}
+<!-- begin slide #{{$idx}} -->
     <div class="slide">
     <div class="slide-content">
-<!-- begin slide #{{$idx}} -->
       {{- $slide -}}
+    </div>
+    </div>
 <!-- end slide #{{$idx}} -->
-    </div>
-    </div>
-{{- end -}}
+{{ end -}}
   </div>
 <script>{{.Script}}</script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
