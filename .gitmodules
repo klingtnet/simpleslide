@@ -1,0 +1,6 @@
+[submodule "vendor/blackfriday"]
+	path = vendor/blackfriday
+	url = https://github.com/russross/blackfriday.git
+[submodule "vendor/cobra"]
+	path = vendor/cobra
+	url = https://github.com/spf13/cobra.git
