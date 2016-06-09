@@ -22,6 +22,9 @@ h1,h2,h3,h4,h5,h6 {
   background-color: #444;
   width: 100vw;
   height: 100vh;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 300ms ease-in;
 }
 .slide-content {
   max-height: 100%;
@@ -91,10 +94,10 @@ function scrollTo(slideNr) {
     var slide = slides[idx];
     if (idx === slideNr) {
       slide.style.visibility = "visible";
-//      slide.style["z-index"] = 0;
+      slide.style.opacity = 1;
     } else {
       slide.style.visibility = "hidden";
-//    slide.style["z-index"] = -1;
+      slide.style.opacity = 0;
     }
   }
   currentSlide = slideNr;
