@@ -8,6 +8,12 @@ import (
 )
 
 // RootCmd is the base command
+//
+// TODO
+// - add ids to each slide (allow hyperlinking)
+// - add page number
+// - show progressbar
+// - add print media query to enable PDF export
 var RootCmd = &cobra.Command{
 	Use:   utils.NAME,
 	Short: "A super simple slideshow generator",
