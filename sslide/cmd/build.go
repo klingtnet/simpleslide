@@ -46,10 +46,6 @@ type Content struct {
 }
 
 func renderTemplate(slides []string) ([]byte, error) {
-	htmlTmpl, err := utils.ReadFileAsString("assets/template.html")
-	if err != nil {
-		return nil, err
-	}
 	style, err := utils.ReadFileAsString("assets/style.css")
 	if err != nil {
 		return nil, err
@@ -64,7 +60,7 @@ func renderTemplate(slides []string) ([]byte, error) {
 		Slides: slides,
 	}
 
-	tmpl, err := template.New("slideshow").Parse(htmlTmpl)
+	tmpl, err := template.ParseFiles("assets/template.html")
 	if err != nil {
 		return nil, err
 	}
