@@ -37,3 +37,9 @@ func PrintIfErr(err error) {
 func PrintErr(format string, args ...interface{}) {
 	fmt.Fprintf(os.Stderr, format, args...)
 }
+
+func PrintIfVerbose(verbose bool, format string, args ...interface{}) {
+	if verbose {
+		fmt.Printf(format, args...)
+	}
+}
