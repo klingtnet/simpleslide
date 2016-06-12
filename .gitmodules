@@ -7,3 +7,6 @@
 [submodule "vendor/errors"]
 	path = vendor/github.com/go-errors/errors
 	url = https://github.com/go-errors/errors.git
+[submodule "vendor/github.com/spf13/pflag"]
+	path = vendor/github.com/spf13/pflag
+	url = https://github.com/spf13/pflag
