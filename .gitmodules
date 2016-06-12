@@ -4,3 +4,6 @@
 [submodule "vendor/cobra"]
 	path = vendor/github.com/spf13/cobra
 	url = https://github.com/spf13/cobra.git
+[submodule "vendor/errors"]
+	path = vendor/github.com/go-errors/errors
+	url = https://github.com/go-errors/errors.git
