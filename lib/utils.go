@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 
+	"github.com/go-errors/errors"
 	"github.com/spf13/cobra"
 )
 
@@ -23,7 +24,7 @@ func ExitIfErr(err error) {
 
 func ExpectExactArgs(cmd *cobra.Command, argCnt int, args []string) {
 	if len(args) != argCnt {
-		PrintErr("error: expected %d arguments, got %d\n", argCnt, len(args))
+		PrintErr(errors.Errorf("error: expected %d arguments, got %d\n", argCnt, len(args)))
 		cmd.Usage()
 		os.Exit(1)
 	}
@@ -31,12 +32,12 @@ func ExpectExactArgs(cmd *cobra.Command, argCnt int, args []string) {
 
 func PrintIfErr(err error) {
 	if err != nil {
-		PrintErr("error: %s\n", err)
+		PrintErr(err)
 	}
 }
 
-func PrintErr(format string, args ...interface{}) {
-	fmt.Fprintf(os.Stderr, format, args...)
+func PrintErr(err error) {
+	fmt.Fprintf(os.Stderr, "%v\n", errors.WrapPrefix(err, "error", 0))
 }
 
 func PrintIfVerbose(verbose bool, format string, args ...interface{}) {
