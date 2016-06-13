@@ -10,3 +10,6 @@
 [submodule "vendor/github.com/spf13/pflag"]
 	path = vendor/github.com/spf13/pflag
 	url = https://github.com/spf13/pflag
+[submodule "vendor/github.com/shurcooL/sanitized_anchor_name"]
+	path = vendor/github.com/shurcooL/sanitized_anchor_name
+	url = https://github.com/shurcooL/sanitized_anchor_name.git
